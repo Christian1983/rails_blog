@@ -1,2 +1,6 @@
-%h1 Posts#show
-%p Find me in app/views/posts/show.html.haml
+%section
+    .card
+        .card-body
+            %h5.card-title= @post.title
+            %h6.cart-subtitle.mb-5.text-muted= @post.ref_date.strftime('%e. %B')
+            %p.card-text= @post.body
