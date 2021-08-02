@@ -10,4 +10,9 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render partial: 'layouts/navigation'
-    = yield
+    .container
+      .row
+        .col-8
+          = yield
+        .col-4
+          = render partial: 'layouts/month_view'

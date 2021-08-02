@@ -1,0 +1,3 @@
+%ul.list-group
+    - @month_group.each do |month, count|
+        %li.list-group-item= "#{month} (#{count})"
