@@ -1,9 +1,20 @@
-.card.mb-5.postCard
-    .card-body
-        %h5.card-title= post.title
-        .d-flex
-            %i.bi.bi-calendar(style="margin-right: 12px")
+- unless short
+    %section
+        .d-flex.justify-space-between
+            .title.w-75
+                %h2.post-title= post.title
+            .date.w-25
+                .d-flex.justify-content-end
+                    %i.bi.bi-calendar(style="margin-right: 12px")
+                    %h6.text-muted(style="padding-top: 2px")= post.ref_date.strftime('%d.%m.%y')
+        .section-body
+            %p.card-text= post.body
+- else
+    .card.mb-5.postCard
+        .card-body
+            %h5.card-title= post.title
+            .d-flex
+                %i.bi.bi-calendar(style="margin-right: 12px")
                 %h6.cart-subtitle.ml-2.mb-5.text-muted(style="padding-top: 2px")= post.ref_date.strftime('%e. %B')
-        %p.card-text{class: ('short' if short)}= post.body
-        - if short
-            = link_to 'Details', post_path(post), class: 'btn btn-primary'
+            %p.card-text.short= post.body
+            %p= link_to 'Details', post_path(post), class: 'btn btn-primary'
