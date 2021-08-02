@@ -1,3 +1,7 @@
 %section#PostIndex
-    - @posts.each do |post|
-        = render partial: 'post_card', locals: {post: post}
+    - @posts.each do |month, posts|
+        %section.month.px-2.py-2{id: month}
+            %h2= month
+            .section-body
+                - posts.each do |post|
+                    = render partial: 'post_card', locals: {post: post, short: true}

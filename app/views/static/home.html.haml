@@ -1,6 +1,4 @@
 %section#latestPosts
-    %ul.list-group
-        - @last_posts.each do |post|
-            = link_to post_path(post) do
-                %li.list-group-item= post.title
+    - @last_posts.each do |post|
+        = render partial: '/posts/post_card', locals: {post: post, short: true}
                 

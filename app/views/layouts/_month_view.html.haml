@@ -1,3 +1,5 @@
-%ul.list-group
+%ul.list-group#MonthList
     - @month_group.each do |month, count|
-        %li.list-group-item= "#{month} (#{count})"
+        - url = current_page?(controller: :posts, action: :index) ? "##{month}" : posts_url(anchor: "#{month}")
+        = link_to url do
+            %li.list-group-item= "#{month} (#{count})"
