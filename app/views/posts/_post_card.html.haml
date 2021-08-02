@@ -1,0 +1,5 @@
+.card.mb-5
+    .card-body
+        %h5.card-title= post.title
+        %h6.cart-subtitle.mb-5.text-muted= post.ref_date.strftime('%e. %B')
+        %p.card-text= post.body

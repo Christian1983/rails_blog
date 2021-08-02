@@ -1,6 +1,2 @@
-%section
-    .card
-        .card-body
-            %h5.card-title= @post.title
-            %h6.cart-subtitle.mb-5.text-muted= @post.ref_date.strftime('%e. %B')
-            %p.card-text= @post.body
+%section#PostShow
+    = render partial: 'post_card', locals: {post: @post}
